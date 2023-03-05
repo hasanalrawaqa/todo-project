@@ -25,3 +25,39 @@ if (welcomeMassage=== false) {
 }
     
 }
+
+// lab 06
+
+let userQusetions=[];
+let answerUserQuestions=[]
+function addQuestion(questionArr, questionsNum) {
+    for (let i = 0; i < questionsNum; i++) {
+      let question = prompt("Enter a new question (Yes/No):");
+      if (question === "") {
+        question = "invalid";
+
+      }
+      else{
+        questionArr.push(question);
+      }
+    
+    }
+  }
+  function questionsAnswer(questionArr,answerArr){
+    let answer="";
+    for (let i = 0; i < questionArr.length; i++) {
+        answer=prompt("please answer;"+questionArr[i])
+        if (answer=="yes"||answer=="no") {
+            answerArr.push(answer);
+        } else {
+            answerArr.push("invalid");
+        }
+        
+    }
+  }
+
+ 
+  addQuestion(userQusetions,3);
+  questionsAnswer(userQusetions, answerUserQuestions);
+  console.log(userQusetions);
+  console.log(answerUserQuestions)
